@@ -1,0 +1,23 @@
+              <tr>
+                <th>Name</th>
+                <th>Join Date</th>
+                <th>Status</th>
+                <th>Room</th>
+              </tr>
+            </thead>
+            <tbody>
+              {employeesMock.map((e, i) => (
+                <tr key={i}>
+                  <td>{e.name}</td>
+                  <td>{e.joinDate}</td>
+                  <td>{e.status}</td>
+                  <td>{e.room}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  );
+}
