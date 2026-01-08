@@ -3,23 +3,6 @@ import { useLang } from "./LanguageContext";
 
 const API = "http://159.198.40.145:5001";
 
-/* =========================
-   DATE FORMATTER
-   ========================= */
-const formatDate = (dateStr) => {
-  if (!dateStr) return "";
-
-  const d = new Date(dateStr);
-
-  if (isNaN(d.getTime())) return "";
-
-  const day = String(d.getDate()).padStart(2, "0");
-  const month = String(d.getMonth() + 1).padStart(2, "0");
-  const year = d.getFullYear();
-
-  return `${day}/${month}/${year}`;
-};
-
 export default function Home({ onLogout }) {
   const { t, lang, changeLang } = useLang();
 
@@ -265,7 +248,7 @@ export default function Home({ onLogout }) {
                 ) : (
                   <>
                     <td>{e.name}</td>
-                    <td>{formatDate(e.join_date)}</td>
+                    <td>{e.join_date}</td>
                     <td>{e.office}</td>
                     <td>{e.nationality}</td>
                     <td>{e.room}</td>
